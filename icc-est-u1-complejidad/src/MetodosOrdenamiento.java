@@ -1,5 +1,5 @@
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MetodosOrdenamiento {
 
@@ -48,20 +48,17 @@ public class MetodosOrdenamiento {
 
     //METODO DE ORDENAMIENTO BURBUJA
     public ArrayList<Integer> burbuja(ArrayList<Integer> arregloOriginal) {
-
-        ArrayList<Integer> arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
-        int n = arreglo.length;
-
+        int n = arregloOriginal.size();
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if ((arreglo[j] > arreglo[j + 1])) {
-                    int temp = arreglo[j];
-                    arreglo[j] = arreglo[j + 1];
-                    arreglo[j + 1] = temp;
+                if (arregloOriginal.get(j) > arregloOriginal.get(j + 1)) {
+                    int temp = arregloOriginal.get(j);
+                    arregloOriginal.set(j, arregloOriginal.get(j + 1));
+                    arregloOriginal.set(j + 1, temp);
                 }
             }
         }
-        return arreglo;
+        return arregloOriginal;
     }
 
 
